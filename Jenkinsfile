@@ -19,7 +19,7 @@ pipeline {
             """)
          }
       }
-      stage('Start test app') {
+    /*  stage('Start test app') {
          steps {
             pwsh(script: """
                docker-compose up -d
@@ -77,7 +77,7 @@ pipeline {
             echo "Deploying to ${ENVIRONMENT}"
             acsDeploy(
                azureCredentialsId: "jenkins_demo",
-               configFilePaths: "**/*.yaml",
+               configFilePaths: "** /*.yaml",        //here should remove space between * and /
                containerService: "${ENVIRONMENT}-demo-cluster | AKS",
                resourceGroupName: "${ENVIRONMENT}-demo",
                sshCredentialsId: ""
@@ -114,12 +114,12 @@ pipeline {
             echo "Deploying to ${ENVIRONMENT}"
             acsDeploy(
                azureCredentialsId: "jenkins_demo",
-               configFilePaths: "**/*.yaml",
+               configFilePaths: "** /*.yaml",    //here should remove space between * and /
                containerService: "${ENVIRONMENT}-demo-cluster | AKS",
                resourceGroupName: "${ENVIRONMENT}-demo",
                sshCredentialsId: ""
             )
          }
-      }
+      } */
    }
 }
